@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; background: #f4f4f9; }
+        .container { max-width: 400px; margin: auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input, button { padding: 10px; margin: 5px; border-radius: 5px; border: 1px solid #ccc; }
+        .buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        #hasil-kalkulator { margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Kalkulator Sederhana</h2>
+        <input type="number" id="angka1" placeholder="Masukkan Angka 1">
+        <input type="number" id="angka2" placeholder="Masukkan Angka 2">
+        <div class="buttons">
+            <button onclick="hitung('+')">+</button>
+            <button onclick="hitung('-')">-</button>
+            <button onclick="hitung('x')">×</button>
+            <button onclick="hitung('÷')">÷</button>
+            <button onclick="hitung('^')">^</button>
+            <button onclick="hitung('√')">√</button>
+            <button onclick="hitung('%')">%</button>
+        </div>
+        <div id="hasil-kalkulator"></div>
+    </div>
+    
+    <script>
+        function hitung(operasi) {
+            let angka1 = parseFloat(document.getElementById("angka1").value);
+            let angka2 = parseFloat(document.getElementById("angka2").value);
+            let hasil;
+
+            if (isNaN(angka1)) {
+                document.getElementById("hasil-kalkulator").innerHTML = "Masukkan angka yang valid!";
+                return;
+            }
+
+            switch (operasi) {
+                case "+": hasil = angka1 + angka2; break;
+                case "-": hasil = angka1 - angka2; break;
+                case "x": hasil = angka1 * angka2; break;
+                case "÷": hasil = angka2 !== 0 ? angka1 / angka2 : "Error: Tidak bisa di bagi 0"; break;
+                case "^": hasil = angka1 ** angka2; break;
+                case "√": hasil = angka1 >= 0 ? Math.sqrt(angka1) : "Error: Tidak bisa akar negatif"; break;
+                case "%": hasil = angka1 % angka2; break;
+                default: hasil = "Operasi tidak valid";
+            }
+
+            document.getElementById("hasil-kalkulator").innerHTML = `Hasil: ${angka1} ${operasi} ${angka2} = ${hasil}`;
+        }
+    </script>
+</body>
+</html>
