@@ -1,0 +1,125 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 900px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+li:hover {
+    transform: translateY(-5px);
+}
+
+li.completed {
+    background-color: #d4edda;
+}
+
+li span {
+    flex: 1;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+li button {
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+li .done-btn {
+    background-color: #28a745;
+}
+
+li .done-btn:hover {
+    background-color: #218838;
+}
+
+li .delete-btn {
+    background-color: #dc3545;
+}
+
+li .delete-btn:hover {
+    background-color: #c82333;
+}
