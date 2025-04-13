@@ -39,7 +39,6 @@ Aplikasi ini menggunakan beberapa fitur modern JavaScript (ES6+) untuk memberika
 ## Screenshot
 Berikut adalah tampilan dari aplikasi:
 
-![Screenshot Aplikasi]
-(C:\Users\User\Downloads\Tampilan.png)
+![Screenshot Aplikasi](C:\Users\User\Downloads\Tampilan.png)
 
 Terima kasih telah menggunakan **Personal To-Do List**!
