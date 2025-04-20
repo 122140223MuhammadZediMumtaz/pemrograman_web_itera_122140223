@@ -1,0 +1,258 @@
+/* Reset & base styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(145deg, #f0f2f5, #dbe2ef);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Container utama */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  min-height: 100vh;
+  justify-content: flex-start;
+}
+
+/* Judul halaman */
+.app-container h1 {
+  font-size: 36px;
+  color: #222;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+/* Form buku */
+.book-form {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 25px 30px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 40px;
+  transition: transform 0.2s ease;
+}
+
+.book-form:hover {
+  transform: translateY(-2px);
+}
+
+.book-form h2 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.book-form input,
+.book-form select {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+.book-form input:focus,
+.book-form select:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+.book-form button {
+  background: linear-gradient(to right, #4a90e2, #007bff);
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.3s ease;
+}
+
+.book-form button:hover {
+  background: linear-gradient(to right, #007bff, #0056b3);
+}
+
+/* Filter dan pencarian */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 25px;
+}
+
+.filter-bar select,
+.filter-bar input[type="text"] {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1;
+  font-size: 15px;
+}
+
+/* List buku */
+.book-list {
+  width: 100%;
+  max-width: 700px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.book-list li {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-list li .info {
+  flex: 1;
+}
+
+.book-list li .info h3 {
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+
+.book-list li .info p {
+  margin: 0;
+  color: #555;
+}
+
+.book-list li .info span {
+  display: block;
+  font-size: 13px;
+  color: #999;
+  margin-top: 4px;
+}
+
+.book-list li .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.book-list li .actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.book-list li .actions button:first-child {
+  background-color: #3498db;
+  color: white;
+}
+
+.book-list li .actions button:first-child:hover {
+  background-color: #2980b9;
+}
+
+.book-list li .actions button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.book-list li .actions button:last-child:hover {
+  background-color: #c0392b;
+}
+
+/* Pesan error yang lebih menarik */
+.error-message {
+  color: #ffffff; /* Warna teks putih agar kontras */
+  background-color: #e74c3c; /* Latar belakang merah cerah */
+  border: 2px solid #c0392b; /* Border lebih tegas */
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow halus */
+  margin-top: 20px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out; /* Efek fade-in untuk pesan error */
+  transition: opacity 0.3s ease;
+}
+
+.error-message:hover {
+  opacity: 0.9; /* Efek hover untuk transparansi */
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pesan notifikasi (success message) */
+.message {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  position: fixed; /* Agar tetap di posisi tertentu */
+  bottom: 20px; /* Menempatkan notifikasi di bagian bawah */
+  right: 20px; /* Menempatkan notifikasi di bagian kanan */
+  z-index: 1000; /* Pastikan berada di atas elemen lainnya */
+  animation: slideIn 0.5s ease-out, fadeOut 1s ease 1.5s forwards; /* Animasi masuk dan keluar */
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Tombol Clear Search */
+.clear-search {
+  padding: 8px 16px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.clear-search:hover {
+  background-color: #c0392b;
+}
