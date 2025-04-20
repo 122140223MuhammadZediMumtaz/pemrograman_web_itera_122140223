@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Manajemen Buku Pribadi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Deskripsi Aplikasi
+Aplikasi Manajemen Buku Pribadi ini dirancang untuk membantu pengguna dalam mengelola koleksi buku pribadi mereka. Aplikasi ini memungkinkan pengguna untuk:
+- Menambahkan buku dengan informasi judul, penulis, dan status buku.
+- Mengedit detail buku yang sudah ada.
+- Menghapus buku dari daftar.
+- Mencari buku berdasarkan judul.
+- Memfilter buku berdasarkan status (Milik, Sedang Dibaca, Ingin Dibeli).
 
-## Available Scripts
+Aplikasi ini dibangun menggunakan **React** dan menggunakan **React Context API** untuk pengelolaan status aplikasi, serta **React Router** untuk navigasi antar halaman.
 
-In the project directory, you can run:
+## Instruksi Instalasi dan Menjalankan
 
-### `npm start`
+1. **Clone Repository**:
+   Pertama, clone repository dengan perintah berikut:
+   ```bash
+   git clone https://github.com/username/book-manager.git
+Screenshot Antarmuka
+Berikut adalah beberapa screenshot antarmuka dari aplikasi yang telah dijalankan.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Tampilan Antarmuka Aplikasi
+Gambar ini menunjukkan tampilan utama aplikasi di mana pengguna dapat melihat daftar buku yang sudah ditambahkan.
+![Aplikasi](https://github.com/user-attachments/assets/bda96085-cd00-47d2-b406-a72d913b5d8b)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+3. Hasil Pengujian Aplikasi
+Gambar ini menunjukkan hasil tes yang berhasil dijalankan menggunakan react-testing-library.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Hasil Pengujian di Console
+Gambar ini menunjukkan hasil tes pada terminal yang menyatakan bahwa sebagian besar tes berhasil dilalui, kecuali satu tes.
 
-### `npm run build`
+Penjelasan Fitur React yang Digunakan
+Context API:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Digunakan untuk mengelola status aplikasi secara global, seperti daftar buku. BookContext menyediakan nilai dan fungsi untuk menambah, mengedit, dan menghapus buku, yang bisa diakses oleh komponen lain menggunakan hook useBookContext.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+React Router:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Digunakan untuk mengatur navigasi antar halaman di aplikasi. Komponen Routes dan Route memungkinkan aplikasi memiliki beberapa halaman (misalnya, halaman utama dan halaman statistik) tanpa perlu me-reload seluruh aplikasi.
 
-### `npm run eject`
+useState dan useEffect:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+useState digunakan untuk menyimpan state lokal, seperti status form input (judul, penulis, status). useEffect digunakan untuk mengelola efek samping seperti penghapusan pesan setelah beberapa detik.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+useMemo:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Digunakan untuk menghitung statistik buku (total, milik, sedang dibaca, ingin dibeli) hanya ketika data buku berubah, sehingga meningkatkan performa aplikasi.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+React Hooks:
 
-## Learn More
+Selain useState dan useEffect, useMemo digunakan untuk mengoptimalkan render ulang aplikasi berdasarkan perubahan data.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Komentar dalam Kode untuk Bagian Pentin
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Laporan Testing
+Aplikasi ini telah diuji menggunakan react-testing-library. Berikut adalah hasil pengujian:
+![Testing1](https://github.com/user-attachments/assets/a0da7e95-c365-4da8-b16b-0600d49a7306)
+![Testing2](https://github.com/user-attachments/assets/483627dc-3683-4eb0-8b40-8231eb222f57)
