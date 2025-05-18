@@ -1,0 +1,12 @@
+alembic
+pyramid
+pyramid_debugtoolbar
+pyramid_jinja2
+pyramid_tm
+SQLAlchemy
+psycopg2-binary
+transaction
+zope.sqlalchemy
+waitress
+cookiecutter
+pytest
